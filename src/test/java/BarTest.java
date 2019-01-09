@@ -45,4 +45,9 @@ public class BarTest {
         bar.removeGuest(guest1);
         assertEquals(0, bar.totalGuests());
     }
+
+    @Test
+    public void hasDrinks(){
+        assertEquals(20, bar.drinkRemaining());
+    }
 }

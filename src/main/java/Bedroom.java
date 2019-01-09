@@ -5,12 +5,16 @@ public class Bedroom {
     private Integer capacity;
     private ArrayList<Guest> guests;
     private String type;
+    private Integer nightlyRate;
+    private Boolean isVacant;
 
-    public Bedroom(Integer number, Integer capacity, String type){
+    public Bedroom(Integer number, Integer capacity, String type, Integer nightlyRate){
         this.number = number;
         this.capacity = capacity;
         this.type = type;
         this.guests = new ArrayList<>();
+        this.nightlyRate = nightlyRate;
+        this.isVacant = true;
     }
 
     public int getNumber(){
@@ -24,6 +28,7 @@ public class Bedroom {
     public void addGuest(Guest guest){
         guests.add(guest);
         guest.checkIn();
+        isVacant = false;
     }
 
     public int getCapacity(){
@@ -39,6 +44,15 @@ public class Bedroom {
         for (int i = 0; i < guests.size(); i++ ){
             guests.get(i).checkOut();
         }
+        isVacant = true;
+    }
+
+    public int getNightlyRate(){
+        return nightlyRate;
+    }
+
+    public Boolean checkVacancy(){
+        return isVacant;
     }
 
 
