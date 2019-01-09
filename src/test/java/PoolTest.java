@@ -12,9 +12,9 @@ public class PoolTest {
     @Before
     public void before(){
         pool = new Pool(2);
-        guest1 = new Guest();
-        guest2 = new Guest();
-        guest3 = new Guest();
+        guest1 = new Guest(10);
+        guest2 = new Guest(10);
+        guest3 = new Guest(10);
 
     }
 

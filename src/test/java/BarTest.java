@@ -11,10 +11,10 @@ public class BarTest {
 
     @Before
     public void before(){
-        bar = new Bar(2);
-        guest1 = new Guest();
-        guest2 = new Guest();
-        guest3 = new Guest();
+        bar = new Bar(2, 20);
+        guest1 = new Guest(10);
+        guest2 = new Guest(10);
+        guest3 = new Guest(10);
     }
 
     @Test
@@ -48,6 +48,13 @@ public class BarTest {
 
     @Test
     public void hasDrinks(){
-        assertEquals(20, bar.drinkRemaining());
+        assertEquals(20, bar.drinksRemaining());
+    }
+
+    @Test
+    public void canSellDrink(){
+        assertEquals(20, bar.drinksRemaining());
+        bar.sellDrink();
+        assertEquals(19, bar.drinksRemaining());
     }
 }

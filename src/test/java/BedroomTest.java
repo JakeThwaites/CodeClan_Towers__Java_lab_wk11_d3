@@ -21,7 +21,7 @@ public class BedroomTest {
         pool = new Pool(2);
         pools = new ArrayList<>();
         pools.add(pool);
-        bar = new Bar(2);
+        bar = new Bar(2, 20);
         bars = new ArrayList<>();
         bars.add(bar);
         room1 = new Bedroom(1,1,"Single", 50);
@@ -29,7 +29,7 @@ public class BedroomTest {
         rooms = new ArrayList<>();
         rooms.add(room1);
         rooms.add(room2);
-        guest1 = new Guest();
+        guest1 = new Guest(10);
         hotel = new Hotel("Overlook Hotel", rooms, bars, pools);
     }
 
